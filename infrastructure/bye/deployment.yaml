@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: kube-bye-app
+spec:
+        replicas: 2
+        selector:
+                matchLabels:
+                        app: kube-bye-app
+        template:
+                metadata:
+                        labels:
+                                app: kube-bye-app
+                spec:
+                        containers:
+                                 - name: kube-bye-app
+                                   image: dockerprofile/image-name:tag
+                                   ports:
+                                           - containerPort: 3003
+                                             protocol: TCP
+                                   env:
+                                           - name: BYE_PORT
+                                             value: "3003"

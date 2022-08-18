@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+        name: web
+        namespace: default
+        annotations:
+                nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+        rules:
+                - http:
+                        paths:
+                                - path: "/hello"
+                                  pathType: Prefix
+                                  backend:
+                                          service:
+                                                  name: kube-hello-svc
+                                                  port: 
+                                                        number: 80
+                                - path: "/bye"
+                                  pathType: Prefix
+                                  backend:
+                                          service:
+                                                name: kube-bye-svc
+                                                port:
+                                                        number: 80
+

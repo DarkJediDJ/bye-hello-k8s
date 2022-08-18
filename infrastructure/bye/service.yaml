@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+        name: kube-bye-svc
+        namespace: default
+spec:
+        selector:
+                app: kube-bye-app
+        ports:
+                - port: 80
+                  targetPort: 3003
+                  protocol: TCP

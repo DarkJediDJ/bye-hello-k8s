@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: bye
+spec:
+        replicas: 2
+        selector:
+                matchLabels:
+                        app: bye
+        template:
+                metadata:
+                        labels:
+                                app: bye
+                spec:
+                        containers:
+                                 - name: bye
+                                   image: darkjedidj/bye:latest
+                                   ports:
+                                           - containerPort: 3003
+                                             protocol: TCP
+                                   env:
+                                           - name: BYE_PORT
+                                             value: "3003"

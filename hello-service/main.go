@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -25,5 +24,5 @@ func main() {
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/hello/person", helloArtyom)
 
-	log.Fatalln(http.ListenAndServe(":"+os.Getenv("HELLO_PORT"), nil))
+	log.Fatalln(http.ListenAndServe(":3001", nil))
 }

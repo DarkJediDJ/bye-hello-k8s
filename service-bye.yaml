@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+        name: bye-service
+        namespace: default
+spec:
+        selector:
+                app: bye-service
+        ports:
+                - port: 80
+                  targetPort: 3003
+                  protocol: TCP

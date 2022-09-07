@@ -5,7 +5,7 @@ metadata:
         namespace: default
 spec:
         selector:
-                app: bye-service
+                app: bye
         ports:
                 - port: 80
                   targetPort: 3003
